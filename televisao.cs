@@ -5,14 +5,14 @@ public class Televisao
     private const int CANAL_MAX = 520;
     private const int CANAL_MIN = 1;
 
-    private int ultimoCanal = 1; // guarda o último canal assistido
+    private int ultimoCanal = 1;
 
     public Televisao(float tamanho)
     {
         Tamanho = tamanho;
-        Volume = 20; // volume inicial padrão
-        Canal = CANAL_MIN; // inicia no primeiro canal
-        Estado = false; // desligada por padrão
+        Volume = 20; 
+        Canal = CANAL_MIN; 
+        Estado = false;
     }
 
     public float Tamanho { get; }
@@ -22,26 +22,20 @@ public class Televisao
     public bool Estado { get; private set; }
     public bool Mudo { get; private set; }
 
-    // ---------------------------
-    // MÉTODOS DE LIGA/DESLIGA
-    // ---------------------------
     public void Ligar()
     {
         Estado = true;
-        Canal = ultimoCanal; // volta para o último canal
+        Canal = ultimoCanal;
         Console.WriteLine("TV ligada.");
     }
 
     public void Desligar()
     {
         Estado = false;
-        ultimoCanal = Canal; // salva canal antes de desligar
+        ultimoCanal = Canal;
         Console.WriteLine("TV desligada.");
     }
 
-    // ---------------------------
-    // MÉTODOS DE VOLUME
-    // ---------------------------
     public void AumentarVolume()
     {
         if (Volume < VOL_MAX)
@@ -70,15 +64,12 @@ public class Televisao
         Console.WriteLine("Mudo desativado.");
     }
 
-    // ---------------------------
-    // MÉTODOS DE CANAL
-    // ---------------------------
     public void ProximoCanal()
     {
         if (Canal < CANAL_MAX)
             Canal++;
         else
-            Canal = CANAL_MIN; // volta para o primeiro canal
+            Canal = CANAL_MIN;
     }
 
     public void CanalAnterior()
@@ -86,7 +77,7 @@ public class Televisao
         if (Canal > CANAL_MIN)
             Canal--;
         else
-            Canal = CANAL_MAX; // vai para o último canal
+            Canal = CANAL_MAX;
     }
 
     public void IrParaCanal(int numero)

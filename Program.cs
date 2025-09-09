@@ -15,7 +15,7 @@ Console.WriteLine($"Canal atual: {tv.Canal}");
 tv.CanalAnterior();
 Console.WriteLine($"Canal atual: {tv.Canal}");
 
-tv.IrParaCanal(600); // inválido
+tv.IrParaCanal(600);
 
 tv.AumentarVolume();
 Console.WriteLine($"Volume: {tv.Volume}");
